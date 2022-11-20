@@ -1,13 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        Cat a = new Cat("Anton", 2);
-        //a.age = 2;
-        //a.name = "Anton";
-        a.meow();
-
-        Cat b = new Cat("Andrey");
-       // b.name = "Andrey";
-        //b.age = 45;
-        b.meow();
+        Person maxim = new Person("Максим", 1988, "Минск");
+        Person anya = new Person("Аня", 1993, "Москва");
+        Person katya = new Person("Катя", 1992, "Калининград");
+        Person artem = new Person("Артем", 1995, "Москва");
+        maxim.answer();
+        anya.answer();
+        katya.answer();
+        artem.answer();
     }
 }
