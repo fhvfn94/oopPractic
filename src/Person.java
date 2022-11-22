@@ -6,10 +6,26 @@ public class Person {
     String jobTitle;
 
     Person(String name, int yearOfBirth, String town, String jobTitle) {
-        this.name = name;
-        this.yearOfBirth = yearOfBirth;
-        this.town = town;
-        this.jobTitle = jobTitle;
+        if (yearOfBirth > 0) {
+            this.yearOfBirth = yearOfBirth;
+        } else {
+            this.yearOfBirth = 0;
+        }
+        if (name == "" || name == null) {
+            this.name = "Информация не указана";
+        } else {
+            this.name = name;
+        }
+        if (town == "" || town == null) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
+        if (jobTitle == "" || jobTitle == null) {
+            this.jobTitle = "Информация не указана";
+        } else {
+            this.jobTitle = jobTitle;
+        }
     }
 
     void answer() {
