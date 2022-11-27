@@ -1,7 +1,10 @@
 import transport.Car;
+import transport.Car.Key;
 
 public class Main {
     public static void main(String[] args) {
+        Key key = new Key("dsdsd", "dgdfg");
+        // не понимаю как вызвать в методе туСтринг вдложенный класс кей?
         Person maxim = new Person("", 1988, "Минск", "бренд-менеджером");
         Person anya = new Person("Аня", 1993, "Москва", "методистом образовательных программ");
         Person katya = new Person("Катя", 1992, "Калининград", "продакт-менеджером");

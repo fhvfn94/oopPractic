@@ -1,6 +1,25 @@
 package transport;
 
 public class Car {
+    public static class Key {
+        private String remoteEngineStart;
+        private String keylessAccess;
+
+        public Key(String remoteEngineStart, String keylessAccess) {
+            if ((remoteEngineStart != null || !remoteEngineStart.isBlank() || !remoteEngineStart.isEmpty()) && (keylessAccess != null || !keylessAccess.isBlank() || !keylessAccess.isEmpty())) {
+                this.remoteEngineStart = remoteEngineStart;
+                this.keylessAccess = keylessAccess;
+            }
+        }
+
+        public String getRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public String getKeylessAccess() {
+            return keylessAccess;
+        }
+    }
     private final String brand;
     private final String model;
     private final double engineVolume;
@@ -11,6 +30,7 @@ public class Car {
     private String typeBody;
     private String numberOfCar;
     private String wheels;
+    private Key key;
 
     public Car(String brand, String model, int year, String color,  String country, double engineVolume, String transmission, String typeBody, String numberOfCar, String wheels) {
         this.brand = brand;
@@ -97,8 +117,14 @@ public class Car {
         }
     }
 
+    public Key getKey() {
+        return key;
+    }
+
     @Override
     public String toString() {
         return getBrand() + " " + getModel() + ", " + getYear() + " год выпуска, сборка в " + getCountry() + ", " + getColor() + " цвета, объем двигателя — " + getEngineVolume() + "л." + getTransmission() + " " + getTypeBody() + " " + getNumberOfCar() + " " + getWheels();
     }
+
+
 }
