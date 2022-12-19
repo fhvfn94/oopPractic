@@ -20,13 +20,47 @@ public class Car {
             return keylessAccess;
         }
     }
-    private final String brand;
-    private final String model;
-    private final double engineVolume;
-    private final String color;
+    private String brand;
+    private String model;
     private final int year;
     private final String country;
+    private String color;
+    private int maxSpeed;
+
+    public void setBrand(String brand) {
+        if (brand != null && !brand.isEmpty() && !brand.isBlank()) {
+            this.brand = brand;
+        } else {
+            this.brand = "Введите значение";
+        }
+    }
+
+    public void setModel(String model) {
+        if (model != null && !model.isEmpty() && !model.isBlank()) {
+            this.model = model;
+        } else {
+            this.model = "Введите значение";
+        }
+    }
+
+    public void setColor(String color) {
+        if (color != null && !color.isEmpty() && !color.isBlank()) {
+        this.color = color;
+        } else {
+        this.color = "Введите значение";
+        }
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
     private String transmission;
+    private double engineVolume;
     private String typeBody;
     private String numberOfCar;
     private String wheels;
