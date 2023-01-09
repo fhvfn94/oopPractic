@@ -1,15 +1,11 @@
 package animals;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Cat {
-    public static int count;
-
-    public static int getCount() {
-        return count;
-    }
-
-    public static class Breed {
+    private static int count;
+    public static class Breed{
         private String name;
         private String country;
         private String hairType;
@@ -29,11 +25,12 @@ public class Cat {
             return hairType;
         }
     }
-    public class BestToy{
+
+    public class favToy {
         private String name;
         private String type;
 
-        public BestToy(String name, String type) {
+        public favToy(String name, String type) {
             this.name = name;
             this.type = type;
         }
@@ -47,56 +44,75 @@ public class Cat {
         }
     }
     private String name;
-    private int yearBirth;
+    private int birthYear;
+    Cat[] friends;
     private Breed breed;
-    private BestToy bestToy;
-
+    private favToy toy;
     public Cat(String name) {
         this(name, 0);
     }
     public Cat(String name, int age) {
-        this.name = name;
+        this.setName(name);
         if (age >= 0) {
-            this.yearBirth = LocalDate.now().getYear() - age;
+            this.birthYear = LocalDate.now().getYear() - age;
         } else {
-            this.yearBirth = LocalDate.now().getYear() - Math.abs(age);
+            this.birthYear = LocalDate.now().getYear() - Math.abs(age);
         }
+        friends = new Cat[0];
         count++;
     }
 
-    public void meow() {
-        System.out.println("meow");
-        System.out.println("Меня зовут " + getName());
-        System.out.println("возраст " + getAge());
-    }
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.isBlank() && !name.isEmpty()) {
+            this.name = name;
+        } else {
+            this.name = "Кот";
+        }
     }
 
     public int getAge() {
-        return LocalDate.now().getYear() - yearBirth;
+        return LocalDate.now().getYear() - birthYear;
     }
-
     public Breed getBreed() {
         return breed;
     }
 
     public void setBreed(Breed breed) {
         if (breed == null) {
-            this.breed = breed;
+        this.breed = breed;
         }
-
     }
 
-    public BestToy getBestToy() {
-        return bestToy;
+    public static int getCount() {
+        return count;
     }
 
-    public void setBestToy(BestToy bestToy) {
-        this.bestToy = bestToy;
+    public favToy getToy() {
+        return toy;
+    }
+
+    public void setToy(favToy toy) {
+        this.toy = toy;
+    }
+
+    public void meow() {
+        System.out.println("Мяу!");
+        System.out.println("Меня зовут " + name);
+        System.out.println("мне " + getAge() + " лет");
+    }
+
+    Cat[] getFriends() {
+        if (friends == null) {
+            friends = new Cat[0];
+        }
+        return friends;
+    }
+    void addFriend(Cat friend) {
+        this.friends = Arrays.copyOf(getFriends(), getFriends().length + 1);
+        this.friends[this.friends.length - 1] = friend;
     }
 }
