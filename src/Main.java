@@ -2,6 +2,7 @@ import transport.Car;
 import transport.Car.Key;
 import transport.train;
 import transport.transport;
+import transport.bus;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,5 +28,7 @@ public class Main {
         System.out.println("Поезд, " + leningrad.getBrand() + " модель " + leningrad.getModel() + " , " + leningrad.getYear() + " год выпуска в " + lasochka.getCountry() + ", скорость передвижения — " + leningrad.getMaxSpeed() + " км/ч, отходит от " + leningrad.getStartPoint() + " вокзала и следует до станции " + leningrad.getFinishPoint() + ". Цена поездки — " + leningrad.getCostWay() + " рублей, в поезде " + leningrad.getRailwayCarriage() + " вагонов.");
 
 
+        bus bus = new bus("Паз", "древность", 1966, "Россия", "белый", 500, 10, "Джеймс Леброн", "А215ЕЕ/22");
+        bus.name();
     }
 }
