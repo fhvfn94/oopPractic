@@ -1,6 +1,6 @@
 package transport;
 
-public class Car {
+public class Car extends transport {
     public static class Key {
         private String remoteEngineStart;
         private String keylessAccess;
@@ -20,44 +20,6 @@ public class Car {
             return keylessAccess;
         }
     }
-    private String brand;
-    private String model;
-    private final int year;
-    private final String country;
-    private String color;
-    private int maxSpeed;
-
-    public void setBrand(String brand) {
-        if (brand != null && !brand.isEmpty() && !brand.isBlank()) {
-            this.brand = brand;
-        } else {
-            this.brand = "Введите значение";
-        }
-    }
-
-    public void setModel(String model) {
-        if (model != null && !model.isEmpty() && !model.isBlank()) {
-            this.model = model;
-        } else {
-            this.model = "Введите значение";
-        }
-    }
-
-    public void setColor(String color) {
-        if (color != null && !color.isEmpty() && !color.isBlank()) {
-        this.color = color;
-        } else {
-        this.color = "Введите значение";
-        }
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
 
     private String transmission;
     private double engineVolume;
@@ -66,13 +28,9 @@ public class Car {
     private String wheels;
     private Key key;
 
-    public Car(String brand, String model, int year, String color,  String country, double engineVolume, String transmission, String typeBody, String numberOfCar, String wheels) {
-        this.brand = brand;
-        this.model = model;
+    public Car(String brand, String model, int year, String country, String color, int maxSpeed, double engineVolume, String transmission, String typeBody, String numberOfCar, String wheels) {
+        super(brand, model, year, country, color, maxSpeed);
         this.engineVolume = engineVolume;
-        this.color = color;
-        this.year = year;
-        this.country = country;
         this.transmission = transmission;
         this.typeBody = typeBody;
         if (numberOfCar == null || numberOfCar.isEmpty() || numberOfCar.isBlank()) {
@@ -87,28 +45,8 @@ public class Car {
         }
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public double getEngineVolume() {
         return engineVolume;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public String getTransmission() {
@@ -155,10 +93,6 @@ public class Car {
         return key;
     }
 
-    @Override
-    public String toString() {
-        return getBrand() + " " + getModel() + ", " + getYear() + " год выпуска, сборка в " + getCountry() + ", " + getColor() + " цвета, объем двигателя — " + getEngineVolume() + "л." + getTransmission() + " " + getTypeBody() + " " + getNumberOfCar() + " " + getWheels();
-    }
 
 
 }

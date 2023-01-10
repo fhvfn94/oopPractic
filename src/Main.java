@@ -15,9 +15,6 @@ public class Main {
         katya.answer();
         artem.answer();
 
-        Car lada = new Car("Lada", "Granta", 2015,"желтого","России",1.7d, "авто", "седан", "", "");
-        System.out.println(lada.toString());
-
         Flower rose = new Flower("", "Голандии", 35.59, 1);
         System.out.println(rose.toStringRose());
     }
