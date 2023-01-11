@@ -1,6 +1,7 @@
 package transport;
 
 public class train extends transport {
+    private double fuelPercentage;
     private int costWay;
     private int time;
     private String startPoint;
@@ -74,5 +75,17 @@ public class train extends transport {
         } else {
             this.railwayCarriage = Math.abs(railwayCarriage);
         }
+    }
+
+    public void setFuelPercentage(double fuelPercentage) {
+        if (fuelPercentage > 0) {
+            this.fuelPercentage = fuelPercentage;
+        } else {
+            this.fuelPercentage = Math.abs(fuelPercentage);
+        }
+    }
+    @Override
+    public double refill() {
+        return fuelPercentage;
     }
 }

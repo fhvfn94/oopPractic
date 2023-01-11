@@ -1,6 +1,7 @@
 package transport;
 
 public class bus extends transport {
+    private double fuelPercentage;
     private int maxPeople;
     private String nameDriver;
     private String numberBus;
@@ -49,5 +50,16 @@ public class bus extends transport {
 
     public void name() {
         System.out.println("Привет! Меня зовут" + getNameDriver() + ". Я водитель автобуса " + getBrand() + " модель " + getModel() + " номер " + getNumberBus() + " страна произовдства " + getCountry() + " год выпуска " + getYear() + " цвет " + getColor() + " максимальная скорость км/ч" + getMaxSpeed() + " максимальная вместимость " + getMaxPeople() + " человек");
+    }
+    public void setFuelPercentage(double fuelPercentage) {
+        if (fuelPercentage > 0) {
+            this.fuelPercentage = fuelPercentage;
+        } else {
+            this.fuelPercentage = Math.abs(fuelPercentage);
+        }
+    }
+    @Override
+    public double refill() {
+        return fuelPercentage;
     }
 }

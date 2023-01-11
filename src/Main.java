@@ -30,5 +30,7 @@ public class Main {
 
         bus bus = new bus("Паз", "древность", 1966, "Россия", "белый", 500, 10, "Джеймс Леброн", "А215ЕЕ/22");
         bus.name();
+        lasochka.setFuelPercentage(57.15);
+        System.out.println(lasochka.refill());
     }
 }

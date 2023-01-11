@@ -1,12 +1,13 @@
 package transport;
 
-public class transport {
+public abstract class transport {
     private String brand;
     private String model;
     private int year;
     private String country;
     private String color;
     private int maxSpeed;
+
 
     public transport(String brand, String model, int year, String country, String color, int maxSpeed) {
         setBrand(brand);
@@ -73,6 +74,7 @@ public class transport {
         } else {
             this.maxSpeed = Math.abs(maxSpeed);
         }
-
     }
+
+    public abstract double refill();
 }

@@ -1,6 +1,7 @@
 package transport;
 
 public class Car extends transport {
+    private double fuelPercentage;
     public static class Key {
         private String remoteEngineStart;
         private String keylessAccess;
@@ -93,6 +94,15 @@ public class Car extends transport {
         return key;
     }
 
-
-
+    public void setFuelPercentage(double fuelPercentage) {
+        if (fuelPercentage > 0) {
+            this.fuelPercentage = fuelPercentage;
+        } else {
+            this.fuelPercentage = Math.abs(fuelPercentage);
+        }
+    }
+    @Override
+    public double refill() {
+        return fuelPercentage;
+    }
 }
